@@ -3,7 +3,7 @@
 <!-- 1. ANIMATED SKY BANNER: SUN + FLOCK OF BIRDS + FLOATING CLOUDS -->
 <img src="./banner.svg" width="100%" alt="Sky Banner" />
 
-
+<br>
 </div>
 
 
