@@ -1,0 +1,72 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 150" preserveAspectRatio="none" width="100%" height="120">
+  <defs>
+    <!-- Deep Ocean Gradient -->
+    <linearGradient id="oceanDeep" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#0284c7" stop-opacity="0.85" />
+      <stop offset="100%" stop-color="#0369a1" stop-opacity="0.95" />
+    </linearGradient>
+
+    <!-- Mid Wave Gradient -->
+    <linearGradient id="oceanMid" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#38bdf8" stop-opacity="0.7" />
+      <stop offset="100%" stop-color="#0284c7" stop-opacity="0.85" />
+    </linearGradient>
+
+    <!-- Front Wave Gradient -->
+    <linearGradient id="oceanFront" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#7dd3fc" stop-opacity="0.6" />
+      <stop offset="60%" stop-color="#38bdf8" stop-opacity="0.8" />
+      <stop offset="100%" stop-color="#0284c7" stop-opacity="0.9" />
+    </linearGradient>
+
+    <style>
+      @keyframes waveDrift1 {
+        0% { transform: translateX(0); }
+        50% { transform: translateX(-25%); }
+        100% { transform: translateX(0); }
+      }
+      @keyframes waveDrift2 {
+        0% { transform: translateX(-20%); }
+        50% { transform: translateX(5%); }
+        100% { transform: translateX(-20%); }
+      }
+      @keyframes waveDrift3 {
+        0% { transform: translateX(0); }
+        50% { transform: translateX(-15%); }
+        100% { transform: translateX(0); }
+      }
+      @keyframes surge {
+        0%, 100% { transform: translateY(0); }
+        50% { transform: translateY(6px); }
+      }
+
+      .wave-layer1 {
+        animation: waveDrift1 14s ease-in-out infinite, surge 6s ease-in-out infinite;
+      }
+      .wave-layer2 {
+        animation: waveDrift2 10s ease-in-out infinite, surge 4.5s ease-in-out infinite;
+      }
+      .wave-layer3 {
+        animation: waveDrift3 7s ease-in-out infinite, surge 3.5s ease-in-out infinite;
+      }
+    </style>
+  </defs>
+
+  <!-- Wave 1 (Deepest Background Wave) -->
+  <g class="wave-layer1">
+    <path fill="url(#oceanDeep)" d="M 0,45 C 150,65 350,20 500,45 C 650,70 850,25 1000,45 C 1150,65 1350,20 1500,45 L 1500,150 L 0,150 Z" />
+  </g>
+
+  <!-- Wave 2 (Midground Ocean Wave) -->
+  <g class="wave-layer2">
+    <path fill="url(#oceanMid)" d="M -100,60 C 80,35 250,75 420,55 C 600,30 780,75 950,55 C 1120,35 1300,75 1450,55 L 1450,150 L -100,150 Z" />
+  </g>
+
+  <!-- Wave 3 (Foreground Wave with White Seafoam Top) -->
+  <g class="wave-layer3">
+    <!-- Sea Foam Crest Line -->
+    <path fill="none" stroke="#ffffff" stroke-width="3" stroke-opacity="0.85" d="M 0,75 C 120,55 240,90 380,70 C 520,50 660,90 800,70 C 940,50 1080,90 1220,70 C 1360,50 1500,90 1640,70" />
+    <!-- Front Wave Body -->
+    <path fill="url(#oceanFront)" d="M 0,75 C 120,55 240,90 380,70 C 520,50 660,90 800,70 C 940,50 1080,90 1220,70 L 1220,150 L 0,150 Z" />
+  </g>
+</svg>
