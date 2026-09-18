@@ -5,9 +5,6 @@
 
 <br/>
 
-<!-- 2. SKY BLUE TERMINAL TYPEWRITER -->
-<img src="https://readme-typing-svg.demolab.com? />
-
 </div>
 
 ### 🛠️ Core Tech Stack
