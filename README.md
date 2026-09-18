@@ -3,11 +3,9 @@
 <!-- 1. ANIMATED SKY BANNER: SUN + FLOCK OF BIRDS + FLOATING CLOUDS -->
 <img src="./banner.svg" width="100%" alt="Sky Banner" />
 
-<br/>
 
 </div>
 
-### 🛠️ Core Tech Stack
 
 <div align="center">
   <!-- Rounded High-Res App Icons -->
@@ -19,7 +17,7 @@
   <img src="https://img.shields.io/badge/Vector%20Search-7DD3FC?style=for-the-badge&logo=fastapi&logoColor=black" alt="Vector DB" />
 </div>
 
-<br/><br/>
+<br/>
 
 <!-- 2. ANIMATED OCEAN WAVES FOOTER -->
 <div align="center">
