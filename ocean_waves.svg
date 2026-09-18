@@ -1,231 +1,41 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 200" preserveAspectRatio="none" width="100%" height="160">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 180" preserveAspectRatio="none" width="100%" height="150">
   <defs>
-    <!-- Deep Ocean Gradient -->
-    <linearGradient id="oceanDeep" x1="0%" y1="0%" x2="0%" y2="100%">
-      <stop offset="0%" stop-color="#0284c7" stop-opacity="0.85" />
-      <stop offset="100%" stop-color="#0369a1" stop-opacity="0.95" />
-    </linearGradient>
-
-    <!-- Mid Wave Gradient -->
-    <linearGradient id="oceanMid" x1="0%" y1="0%" x2="0%" y2="100%">
-      <stop offset="0%" stop-color="#38bdf8" stop-opacity="0.75" />
-      <stop offset="100%" stop-color="#0284c7" stop-opacity="0.9" />
-    </linearGradient>
-
-    <!-- Front Wave Gradient -->
-    <linearGradient id="oceanFront" x1="0%" y1="0%" x2="0%" y2="100%">
-      <stop offset="0%" stop-color="#7dd3fc" stop-opacity="0.7" />
-      <stop offset="60%" stop-color="#38bdf8" stop-opacity="0.85" />
-      <stop offset="100%" stop-color="#0284c7" stop-opacity="0.95" />
-    </linearGradient>
-
-    <!-- Sailboat Template -->
-    <g id="sailboat">
-      <!-- Hull -->
-      <path d="M 0,0 L 50,0 L 40,16 L 8,16 Z" fill="#0f172a" />
-      <!-- Hull Accent Stripe -->
-      <path d="M 5,4 L 45,4 L 42,7 L 7,7 Z" fill="#38bdf8" />
-      <!-- Mast -->
-      <line x1="24" y1="0" x2="24" y2="-42" stroke="#475569" stroke-width="2" />
-      <!-- Main Sail (White) -->
-      <path d="M 26,-5 L 26,-38 L 48,-5 Z" fill="#ffffff" stroke="#e2e8f0" stroke-width="1" />
-      <!-- Front Sail (Cyan Accent) -->
-      <path d="M 22,-5 L 22,-32 L 6,-5 Z" fill="#e0f2fe" stroke="#bae6fd" stroke-width="1" />
-      <!-- Little Pennant Flag -->
-      <path d="M 24,-42 L 32,-39 L 24,-36 Z" fill="#0284c7" />
+    <linearGradient id="deep" x1="0%" y1="0%" x2="0%" y2="1"><stop offset="0%" stop-color="#0284c7"/><stop offset="100%" stop-color="#0369a1"/></linearGradient>
+    <linearGradient id="mid" x1="0%" y1="0%" x2="0%" y2="1"><stop offset="0%" stop-color="#38bdf8"/><stop offset="100%" stop-color="#0284c7"/></linearGradient>
+    <linearGradient id="front" x1="0%" y1="0%" x2="0%" y2="1"><stop offset="0%" stop-color="#7dd3fc"/><stop offset="60%" stop-color="#38bdf8"/><stop offset="100%" stop-color="#0284c7"/></linearGradient>
+    <g id="boat">
+      <path d="M0,0 L44,0 L36,14 L8,14 Z" fill="#0f172a"/><path d="M5,3 L40,3 L37,6 L7,6 Z" fill="#38bdf8"/>
+      <line x1="22" y1="0" x2="22" y2="-36" stroke="#475569" stroke-width="2"/>
+      <path d="M24,-4 L24,-32 L42,-4 Z" fill="#ffffff"/><path d="M20,-4 L20,-26 L6,-4 Z" fill="#e0f2fe"/>
+      <path d="M22,-36 L29,-33 L22,-30 Z" fill="#0284c7"/>
     </g>
-
-    <!-- Leaping Fish Template -->
     <g id="fish">
-      <!-- Fish Body -->
-      <path d="M -16,0 C -10,-8 6,-7 14,0 C 6,7 -10,8 -16,0 Z" fill="#0284c7" />
-      <!-- Tail Fin -->
-      <path d="M -14,0 L -24,-7 L -20,0 L -24,7 Z" fill="#38bdf8" />
-      <!-- Dorsal Fin -->
-      <path d="M -2,-5 Q 4,-12 8,-4 Z" fill="#38bdf8" />
-      <!-- Eye -->
-      <circle cx="8" cy="-2" r="1.5" fill="#ffffff" />
-      <circle cx="9" cy="-2" r="0.7" fill="#0f172a" />
+      <path d="M-14,0 C-9,-7 5,-6 12,0 C5,6 -9,7 -14,0 Z" fill="#0284c7"/>
+      <path d="M-12,0 L-20,-6 L-17,0 L-20,6 Z" fill="#38bdf8"/><path d="M-2,-4 Q3,-10 7,-3 Z" fill="#38bdf8"/>
+      <circle cx="7" cy="-2" r="1.5" fill="#ffffff"/><circle cx="8" cy="-2" r="0.7" fill="#0f172a"/>
     </g>
-
-    <!-- Splash Droplet Template -->
-    <g id="splash">
-      <circle cx="-6" cy="-2" r="2" fill="#ffffff" opacity="0.8" />
-      <circle cx="0" cy="-6" r="2.5" fill="#bae6fd" opacity="0.9" />
-      <circle cx="6" cy="-2" r="2" fill="#ffffff" opacity="0.8" />
-    </g>
-
     <style>
-      /* Faster & Lively Wave Drift Animations */
-      @keyframes waveFast1 {
-        0% { transform: translateX(0); }
-        50% { transform: translateX(-20%); }
-        100% { transform: translateX(0); }
-      }
-      @keyframes waveFast2 {
-        0% { transform: translateX(-15%); }
-        50% { transform: translateX(8%); }
-        100% { transform: translateX(-15%); }
-      }
-      @keyframes waveFast3 {
-        0% { transform: translateX(0); }
-        50% { transform: translateX(-12%); }
-        100% { transform: translateX(0); }
-      }
-      @keyframes fastSurge {
-        0%, 100% { transform: translateY(0); }
-        50% { transform: translateY(8px); }
-      }
-
-      .wave-back {
-        animation: waveFast1 6s ease-in-out infinite, fastSurge 3s ease-in-out infinite;
-      }
-      .wave-center {
-        animation: waveFast2 4.5s ease-in-out infinite, fastSurge 2.2s ease-in-out infinite;
-      }
-      .wave-front {
-        animation: waveFast3 3.2s ease-in-out infinite, fastSurge 1.8s ease-in-out infinite;
-      }
-
-      /* Sailboat Rocking & Floating on Waves */
-      @keyframes boatCruise {
-        0% { transform: translate(160px, 85px) rotate(-5deg); }
-        25% { transform: translate(175px, 78px) rotate(4deg); }
-        50% { transform: translate(190px, 86px) rotate(-6deg); }
-        75% { transform: translate(205px, 79px) rotate(5deg); }
-        100% { transform: translate(160px, 85px) rotate(-5deg); }
-      }
-      .sailboat-group {
-        animation: boatCruise 7s ease-in-out infinite;
-        transform-origin: 25px 8px;
-      }
-
-      /* Fish 1 Leaping Arc (Left/Center) */
-      @keyframes fishLeap1 {
-        0%, 35% {
-          transform: translate(450px, 140px) rotate(-50deg) scale(0);
-          opacity: 0;
-        }
-        40% {
-          transform: translate(470px, 80px) rotate(-35deg) scale(1);
-          opacity: 1;
-        }
-        47% {
-          transform: translate(520px, 40px) rotate(5deg) scale(1.1);
-          opacity: 1;
-        }
-        54% {
-          transform: translate(570px, 80px) rotate(45deg) scale(1);
-          opacity: 1;
-        }
-        58% {
-          transform: translate(590px, 135px) rotate(70deg) scale(0.4);
-          opacity: 0;
-        }
-        100% {
-          transform: translate(590px, 135px) scale(0);
-          opacity: 0;
-        }
-      }
-      .fish-anim1 {
-        animation: fishLeap1 5.5s ease-in-out infinite;
-      }
-
-      /* Splash 1 (Appears when fish enters/exits) */
-      @keyframes splashFade1 {
-        0%, 38% { opacity: 0; transform: translate(460px, 115px) scale(0.2); }
-        40% { opacity: 1; transform: translate(460px, 115px) scale(1.2); }
-        43%, 53% { opacity: 0; transform: translate(460px, 115px) scale(0); }
-        55% { opacity: 1; transform: translate(585px, 120px) scale(1.3); }
-        59%, 100% { opacity: 0; transform: translate(585px, 120px) scale(0.2); }
-      }
-      .splash-anim1 {
-        animation: splashFade1 5.5s ease-out infinite;
-      }
-
-      /* Fish 2 Leaping Arc (Right side) */
-      @keyframes fishLeap2 {
-        0%, 55% {
-          transform: translate(820px, 145px) rotate(-55deg) scale(0);
-          opacity: 0;
-        }
-        60% {
-          transform: translate(845px, 85px) rotate(-30deg) scale(0.9);
-          opacity: 1;
-        }
-        67% {
-          transform: translate(895px, 48px) rotate(8deg) scale(1);
-          opacity: 1;
-        }
-        74% {
-          transform: translate(945px, 85px) rotate(48deg) scale(0.9);
-          opacity: 1;
-        }
-        78% {
-          transform: translate(965px, 140px) rotate(75deg) scale(0.3);
-          opacity: 0;
-        }
-        100% {
-          transform: translate(965px, 140px) scale(0);
-          opacity: 0;
-        }
-      }
-      .fish-anim2 {
-        animation: fishLeap2 6.5s ease-in-out infinite;
-        animation-delay: 1.5s;
-      }
-
-      /* Splash 2 */
-      @keyframes splashFade2 {
-        0%, 58% { opacity: 0; transform: translate(835px, 120px) scale(0.2); }
-        60% { opacity: 1; transform: translate(835px, 120px) scale(1.1); }
-        63%, 73% { opacity: 0; transform: translate(835px, 120px) scale(0); }
-        75% { opacity: 1; transform: translate(960px, 125px) scale(1.2); }
-        79%, 100% { opacity: 0; transform: translate(960px, 125px) scale(0.2); }
-      }
-      .splash-anim2 {
-        animation: splashFade2 6.5s ease-out infinite;
-        animation-delay: 1.5s;
-      }
+      @keyframes w1 { 0%,100% { transform: translate(0,0); } 50% { transform: translate(-20%,6px); } }
+      @keyframes w2 { 0%,100% { transform: translate(-15%,0); } 50% { transform: translate(6%,7px); } }
+      @keyframes w3 { 0%,100% { transform: translate(0,0); } 50% { transform: translate(-10%,5px); } }
+      @keyframes bRock { 0%,100% { transform: translate(160px,75px) rotate(-6deg); } 50% { transform: translate(195px,84px) rotate(5deg); } }
+      @keyframes fJump1 { 0%,35% { transform: translate(450px,130px) scale(0); opacity:0; } 42% { transform: translate(480px,70px) scale(1); opacity:1; } 50% { transform: translate(530px,35px) scale(1.1); opacity:1; } 58% { transform: translate(580px,80px) scale(1); opacity:1; } 63%,100% { transform: translate(600px,130px) scale(0); opacity:0; } }
+      @keyframes fJump2 { 0%,55% { transform: translate(820px,135px) scale(0); opacity:0; } 62% { transform: translate(850px,75px) scale(1); opacity:1; } 70% { transform: translate(900px,40px) scale(1); opacity:1; } 78% { transform: translate(950px,85px) scale(1); opacity:1; } 83%,100% { transform: translate(970px,135px) scale(0); opacity:0; } }
+      .layer1 { animation: w1 5s ease-in-out infinite; }
+      .layer2 { animation: w2 4s ease-in-out infinite; }
+      .layer3 { animation: w3 3s ease-in-out infinite; }
+      .boat-anim { animation: bRock 5s ease-in-out infinite; }
+      .fish-anim1 { animation: fJump1 5s ease-in-out infinite; }
+      .fish-anim2 { animation: fJump2 6s ease-in-out infinite; }
     </style>
   </defs>
-
-  <!-- 1. Wave Layer 1 (Deep Ocean Background) -->
-  <g class="wave-back">
-    <path fill="url(#oceanDeep)" d="M 0,80 C 150,105 350,55 500,80 C 650,105 850,55 1000,80 C 1150,105 1350,55 1500,80 L 1500,200 L 0,200 Z" />
-  </g>
-
-  <!-- 2. Sailboat (Rocking and floating on the water) -->
-  <g class="sailboat-group">
-    <use href="#sailboat" />
-  </g>
-
-  <!-- 3. Wave Layer 2 (Midground Wave) -->
-  <g class="wave-center">
-    <path fill="url(#oceanMid)" d="M -100,95 C 80,65 250,115 420,90 C 600,60 780,115 950,90 C 1120,65 1300,115 1450,90 L 1450,200 L -100,200 Z" />
-  </g>
-
-  <!-- 4. Leaping Fish 1 & Splash Droplets -->
-  <g class="splash-anim1">
-    <use href="#splash" />
-  </g>
-  <g class="fish-anim1">
-    <use href="#fish" />
-  </g>
-
-  <!-- 5. Leaping Fish 2 & Splash Droplets -->
-  <g class="splash-anim2">
-    <use href="#splash" />
-  </g>
-  <g class="fish-anim2">
-    <use href="#fish" />
-  </g>
-
-  <!-- 6. Wave Layer 3 (Foreground Wave with Foam Crest) -->
-  <g class="wave-front">
-    <!-- Foamy White Crest Line -->
-    <path fill="none" stroke="#ffffff" stroke-width="4" stroke-linecap="round" stroke-opacity="0.9" d="M 0,115 C 120,90 240,135 380,110 C 520,85 660,135 800,110 C 940,85 1080,135 1220,110 C 1360,85 1500,135 1640,110" />
-    <!-- Foreground Wave Body -->
-    <path fill="url(#oceanFront)" d="M 0,115 C 120,90 240,135 380,110 C 520,85 660,135 800,110 C 940,85 1080,135 1220,110 C 1360,85 1500,135 1640,110 L 1640,200 L 0,200 Z" />
+  <g class="layer1"><path fill="url(#deep)" d="M0,70 C150,95 350,45 500,70 C650,95 850,45 1000,70 C1150,95 1350,45 1500,70 L1500,180 L0,180 Z"/></g>
+  <g class="boat-anim"><use href="#boat"/></g>
+  <g class="layer2"><path fill="url(#mid)" d="M-100,85 C80,55 250,105 420,80 C600,50 780,105 950,80 C1120,55 1300,105 1450,80 L1450,180 L-100,180 Z"/></g>
+  <g class="fish-anim1"><use href="#fish"/></g>
+  <g class="fish-anim2"><use href="#fish"/></g>
+  <g class="layer3">
+    <path fill="none" stroke="#ffffff" stroke-width="4" stroke-opacity="0.9" d="M0,105 C120,80 240,125 380,100 C520,75 660,125 800,100 C940,75 1080,125 1220,100 C1360,75 1500,125 1640,100"/>
+    <path fill="url(#front)" d="M0,105 C120,80 240,125 380,100 C520,75 660,125 800,100 C940,75 1080,125 1220,100 L1220,180 L0,180 Z"/>
   </g>
 </svg>
