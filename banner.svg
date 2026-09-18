@@ -186,11 +186,8 @@
 
   <!-- Central Title Text (Gently floating) -->
   <g class="title-container" filter="url(#softGlow)">
-    <text x="50%" y="115" text-anchor="middle" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif" font-size="42" font-weight="800" fill="#ffffff" letter-spacing="1">
-      Hoàng Ngọc Đức
-    </text>
     <text x="50%" y="158" text-anchor="middle" font-family="'Fira Code', -apple-system, monospace" font-size="18" font-weight="700" fill="#0369a1" letter-spacing="2">
-      SOFTWARE ENGINEER • FULLSTACK &amp; AI
+      SOFTWARE ENGINEER
     </text>
   </g>
 </svg>
