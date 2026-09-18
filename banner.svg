@@ -1,0 +1,196 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 250" width="100%" height="250">
+  <defs>
+    <!-- Sky Background Gradient -->
+    <linearGradient id="skyGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#38bdf8" />
+      <stop offset="60%" stop-color="#7dd3fc" />
+      <stop offset="100%" stop-color="#bae6fd" />
+    </linearGradient>
+
+    <!-- Sun Glow Gradient -->
+    <radialGradient id="sunGlow" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#fef08a" stop-opacity="1" />
+      <stop offset="40%" stop-color="#fde047" stop-opacity="0.8" />
+      <stop offset="80%" stop-color="#facc15" stop-opacity="0.3" />
+      <stop offset="100%" stop-color="#fbbf24" stop-opacity="0" />
+    </radialGradient>
+
+    <!-- Sun Core Gradient -->
+    <linearGradient id="sunCore" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#fffbeb" />
+      <stop offset="60%" stop-color="#fef08a" />
+      <stop offset="100%" stop-color="#facc15" />
+    </linearGradient>
+
+    <!-- Cloud shape template -->
+    <g id="cloudShape">
+      <path fill="#ffffff" d="M25,60 a20,20 0 0,1 30,-15 a35,35 0 0,1 60,0 a25,25 0 0,1 35,15 a20,20 0 0,1 -10,35 l-105,0 a20,20 0 0,1 -10,-35 z" />
+    </g>
+
+    <!-- Small Cloud shape template -->
+    <g id="cloudSmall">
+      <path fill="#ffffff" d="M15,40 a12,12 0 0,1 20,-10 a22,22 0 0,1 40,0 a18,18 0 0,1 22,10 a15,15 0 0,1 -8,22 l-66,0 a15,15 0 0,1 -8,-22 z" />
+    </g>
+
+    <!-- Flying Bird Template (Wing flapping) -->
+    <g id="flyingBird">
+      <path class="wing" fill="#0369a1" d="M 0,0 Q 8,-12 18,-6 Q 9,1 0,0 Q -9,1 -18,-6 Q -8,-12 0,0 Z" />
+    </g>
+
+    <filter id="softGlow" x="-20%" y="-20%" width="140%" height="140%">
+      <feDropShadow dx="0" dy="2" stdDeviation="3" flood-color="#0284c7" flood-opacity="0.2"/>
+    </filter>
+
+    <style>
+      /* Sun Animation */
+      @keyframes sunPulse {
+        0%, 100% { transform: scale(1); opacity: 0.9; }
+        50% { transform: scale(1.15); opacity: 1; }
+      }
+      .sun-rays {
+        transform-origin: 780px 65px;
+        animation: sunPulse 6s ease-in-out infinite;
+      }
+
+      /* Cloud Drift Animations */
+      @keyframes driftSlow {
+        from { transform: translateX(-250px); }
+        to { transform: translateX(980px); }
+      }
+      @keyframes driftMed {
+        from { transform: translateX(-220px); }
+        to { transform: translateX(980px); }
+      }
+      @keyframes driftFast {
+        from { transform: translateX(-180px); }
+        to { transform: translateX(980px); }
+      }
+      .cloud-bg { opacity: 0.45; animation: driftSlow 36s linear infinite; }
+      .cloud-mid { opacity: 0.75; animation: driftMed 24s linear infinite; }
+      .cloud-fore { opacity: 0.95; animation: driftFast 16s linear infinite; }
+
+      /* Bird Wing Flapping */
+      @keyframes wingFlapFast {
+        0%, 100% { transform: scaleY(1); }
+        50% { transform: scaleY(-0.65); }
+      }
+      @keyframes wingFlapSlow {
+        0%, 100% { transform: scaleY(1); }
+        50% { transform: scaleY(-0.6); }
+      }
+      .bird1 .wing { transform-origin: center; animation: wingFlapFast 0.5s ease-in-out infinite; }
+      .bird2 .wing { transform-origin: center; animation: wingFlapSlow 0.65s ease-in-out infinite; }
+      .bird3 .wing { transform-origin: center; animation: wingFlapFast 0.55s ease-in-out infinite; }
+      .bird4 .wing { transform-origin: center; animation: wingFlapSlow 0.7s ease-in-out infinite; }
+      .bird5 .wing { transform-origin: center; animation: wingFlapFast 0.48s ease-in-out infinite; }
+
+      /* Bird Flight Across the Sky (Flock movement) */
+      @keyframes flight1 {
+        from { transform: translate(-100px, 45px); }
+        to { transform: translate(1000px, 25px); }
+      }
+      @keyframes flight2 {
+        from { transform: translate(-135px, 60px); }
+        to { transform: translate(980px, 40px); }
+      }
+      @keyframes flight3 {
+        from { transform: translate(-150px, 35px); }
+        to { transform: translate(960px, 15px); }
+      }
+      @keyframes flight4 {
+        from { transform: translate(-190px, 50px); }
+        to { transform: translate(930px, 30px); }
+      }
+      @keyframes flight5 {
+        from { transform: translate(-220px, 70px); }
+        to { transform: translate(910px, 55px); }
+      }
+      .flight-path1 { animation: flight1 15s linear infinite; }
+      .flight-path2 { animation: flight2 15s linear infinite; animation-delay: -0.2s; }
+      .flight-path3 { animation: flight3 15s linear infinite; animation-delay: -0.4s; }
+      .flight-path4 { animation: flight4 15s linear infinite; animation-delay: -0.7s; }
+      .flight-path5 { animation: flight5 15s linear infinite; animation-delay: -1.0s; }
+
+      /* Gentle Text Hovering */
+      @keyframes floatText {
+        0%, 100% { transform: translateY(0); }
+        50% { transform: translateY(-4px); }
+      }
+      .title-container {
+        animation: floatText 4s ease-in-out infinite;
+      }
+    </style>
+  </defs>
+
+  <!-- Sky Canvas with rounded aesthetic corners -->
+  <rect width="100%" height="100%" rx="20" fill="url(#skyGrad)" />
+
+  <!-- The Glowing Sun (Top-Right) -->
+  <g>
+    <!-- Outer Glow -->
+    <circle cx="780" cy="65" r="70" fill="url(#sunGlow)" class="sun-rays" />
+    <!-- Sun Inner Core -->
+    <circle cx="780" cy="65" r="32" fill="url(#sunCore)" />
+  </g>
+
+  <!-- Background Layer Clouds -->
+  <g class="cloud-bg" style="animation-delay: -8s;" transform="translate(0, 15) scale(1.1)">
+    <use href="#cloudShape" />
+  </g>
+  <g class="cloud-bg" style="animation-delay: -24s;" transform="translate(0, 50) scale(0.9)">
+    <use href="#cloudSmall" />
+  </g>
+
+  <!-- Midground Layer Clouds -->
+  <g class="cloud-mid" style="animation-delay: -14s;" transform="translate(0, 85) scale(1.3)">
+    <use href="#cloudShape" />
+  </g>
+  <g class="cloud-mid" style="animation-delay: -3s;" transform="translate(0, 20) scale(1.0)">
+    <use href="#cloudSmall" />
+  </g>
+
+  <!-- Animated Flock of Birds (V-Formation flying across the sky) -->
+  <g class="flight-path1">
+    <g class="bird1" transform="scale(0.85)">
+      <use href="#flyingBird" />
+    </g>
+  </g>
+  <g class="flight-path2">
+    <g class="bird2" transform="scale(0.7)">
+      <use href="#flyingBird" />
+    </g>
+  </g>
+  <g class="flight-path3">
+    <g class="bird3" transform="scale(0.75)">
+      <use href="#flyingBird" />
+    </g>
+  </g>
+  <g class="flight-path4">
+    <g class="bird4" transform="scale(0.65)">
+      <use href="#flyingBird" />
+    </g>
+  </g>
+  <g class="flight-path5">
+    <g class="bird5" transform="scale(0.6)">
+      <use href="#flyingBird" />
+    </g>
+  </g>
+
+  <!-- Foreground Layer Clouds (In front of birds) -->
+  <g class="cloud-fore" style="animation-delay: -9s;" transform="translate(0, 125) scale(1.25)">
+    <use href="#cloudShape" />
+  </g>
+  <g class="cloud-fore" style="animation-delay: -19s;" transform="translate(0, 40) scale(1.15)">
+    <use href="#cloudSmall" />
+  </g>
+
+  <!-- Central Title Text (Gently floating) -->
+  <g class="title-container" filter="url(#softGlow)">
+    <text x="50%" y="115" text-anchor="middle" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif" font-size="42" font-weight="800" fill="#ffffff" letter-spacing="1">
+      Hoàng Ngọc Đức
+    </text>
+    <text x="50%" y="158" text-anchor="middle" font-family="'Fira Code', -apple-system, monospace" font-size="18" font-weight="700" fill="#0369a1" letter-spacing="2">
+      SOFTWARE ENGINEER • FULLSTACK &amp; AI
+    </text>
+  </g>
+</svg>
